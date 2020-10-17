@@ -1,5 +1,5 @@
 .canvas{
-	height: 300px;
+	padding-top: 50%;
 }
 
 .hidden{
@@ -9,8 +9,8 @@
 .image{
 	position: absolute; 
 	transform: translate(-50%, -50%);
-	height: 30px;
-	width: 30px;
+	height: 10%;
+	width: 10%;
 }
 
 #log{

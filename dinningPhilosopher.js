@@ -46,6 +46,7 @@ function start () {
 		$("#start").text("Pause");
 		$("#start").removeClass("btn-success");
 		$("#start").addClass("btn-danger");
+		autoPlayer();
 	}
 	else{
 		$("#start").text("Play");
@@ -55,9 +56,11 @@ function start () {
 }
 
 function autoPlayer () {
-	if(playing)
+	if(playing)	{
 		next();
-	setTimeout(autoPlayer, 300);
+		setTimeout(autoPlayer, 300);
+	}
+	
 }
 
 //Handle Pushing Next Button
@@ -165,9 +168,7 @@ function addEatingIcon (phi) {
 							.addClass("eatingIcon")
 							.addClass("image")
 							.css({top: (position.top + 12 )+"%", left: position.left+"%"})
-							.css({transform : 'translate(-50%, -50%)'})
-							.width("30px")
-							.height("30px");
+							.css({transform : 'translate(-50%, -50%)'});
 	$("#canvas").prepend(eatingIcon);
 }
 
@@ -214,7 +215,6 @@ const RADIUS = 30;
 var phiStatus = [];
 $(document).ready(function () {	
 	reset();
-	autoPlayer();
 	$("#reset").on("click", reset);
 	$("#next").on("click", next);
 	$("#start").on("click", start);
