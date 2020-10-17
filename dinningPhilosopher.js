@@ -91,20 +91,20 @@ function phiAction(i){
 		switch ($(phi).attr("status")) {
 			case STATUS.THINKING:				
 				if (checkChopsticksAvaiable(chopsticks)==false){
-					writeLog('philosopher '+i+' no chopsticks', ['text-danger']);
+					writeLog('phi '+i+' no chopsticks', ['text-danger']);
 					return;
 				}
 				setChopstickStatus(chopsticks, 0);
 				moveChopSticksToPhi(phi);
 				addEatingIcon(phi);
 				$(phi).attr("status", STATUS.EATING);
-				writeLog('philosopher '+i+' is eating', ['text-success']);				
+				writeLog('phi '+i+' is eating', ['text-success']);				
 				break;
 			case STATUS.EATING:
 				$(".eatingIcon").remove();
 				chopsticks.forEach(releaseChopstick);
 				$(phi).attr("status", STATUS.THINKING);
-				writeLog('philosopher '+i+' done eating', ['text-info']);
+				writeLog('phi '+i+' done eating', ['text-info']);
 				break;
 			default:
 				console.log('error','incorrect philosopher status');
@@ -167,7 +167,7 @@ function addEatingIcon (phi) {
 							.attr("src", "assets/eating.svg")
 							.addClass("eatingIcon")
 							.addClass("image")
-							.css({top: (position.top + 12 )+"%", left: position.left+"%"})
+							.css({top: (position.top + 7 )+"%", left: position.left+"%"})
 							.css({transform : 'translate(-50%, -50%)'});
 	$("#canvas").prepend(eatingIcon);
 }
