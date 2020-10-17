@@ -16,12 +16,5 @@
 #log{
 	overflow: auto;
 	height: 300px;	
-}
-
-main{
-	margin-bottom: 50px;
-}
-
-body{
-	padding-bottom: 30px;
+	margin-bottom: 30px;
 }
