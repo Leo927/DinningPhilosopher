@@ -1,0 +1,19 @@
+.canvas{
+	height: 300px;
+}
+
+.hidden{
+	display: none;
+}
+
+.image{
+	position: absolute; 
+	transform: translate(-50%, -50%);
+	height: 30px;
+	width: 30px;
+}
+
+#log{
+	overflow: auto;
+	height: 300px;	
+}
