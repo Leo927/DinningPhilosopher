@@ -192,7 +192,8 @@ function pause () {
 
 function reset () {
 	currentP = 0;
-	playing = false;
+	if(playing)
+		start();
 	console.log('reset in progress');
 	$("#canvas").empty();
 	drawPhilosophers(NUM_PHI, RADIUS);
