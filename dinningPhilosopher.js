@@ -18,6 +18,21 @@ function drawPhilosophers (number, radius) {
 	
 }
 
+function addNumberToPhi () {
+	 $(".philosopher").each(function (index,element) {
+	 	var num = $("<div></div>")
+							.addClass("image")
+							.addClass("num")
+							.addClass("text-info")
+							.css({top: element.style.top, left: element.style.left })
+							.css({transform : 'translate(-50%, -50%)'})
+							.attr("no", $(element).attr("no"))
+							.text($(element).attr("no"));
+		$("#canvas").append(num);
+		console.log($(element).attr("no"))
+	 })
+}
+
 function addChopSticks(){
 	console.log('addHiddenChopsticksToPhs');
 	const step = 2*Math.PI/NUM_PHI;
@@ -214,8 +229,11 @@ var currentP;
 const NUM_PHI = 5;
 const RADIUS = 30;
 var phiStatus = [];
+
+
 $(document).ready(function () {	
 	reset();
+	addNumberToPhi();
 	$("#reset").on("click", reset);
 	$("#next").on("click", next);
 	$("#start").on("click", start);
